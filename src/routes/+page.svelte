@@ -3,31 +3,93 @@
   import DocRenderer from '$lib/components/DocRenderer.svelte';
   import type { Block } from '$lib/components/DocRenderer.svelte';
   const blocks = rawBlocks as Block[];
+  import WildBee from '$lib/components/wildbee.svelte';
+  import HoneyBee from '$lib/components/honeybee.svelte';
 </script>
 
+<WildBee />
+<HoneyBee />
 
-
-<!-- 
-Hard-code custom code that should appear BEFORE Google Doc here. 
-This code is in +page.svelte and can be manually coded using HTML or Svelte tags.
--->
-<header class="container-fluid d-flex flex-column align-items-center justify-content-center vh-100 mb-4" style="background-image:url('hero-example.png');background-size:cover;background-position:center;">
-  <h1 class="text-white text-center display-1">Multimedia Template 2026</h1>
-  <p class="text-white fw-light text-center">This is an example of the 2026 <a class="text-light" href="https://github.com/jrue/multimedia-template-2026" target="_blank">multimedia template</a> using Svelte.<br> This topper (header) is hard coded in <code>+page.svelte</code> file, while the rest of the page is imported from a <a class="text-light" href="https://docs.google.com/document/d/1JaxRkCqZyeWIPwXXocAwUoFaPsqULiQI_Oiby_F0JZ8/edit?usp=sharing" target="_blank">Google Doc</a>.</p>
+<header class="hero-header">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="/scrolly/01.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-content">
+    <h1 class="text-white text-center display-1">To bee or not to bee</h1>
+    <p class="text-white text-center lead">By Sonia Waraich</p>
+  </div>
 </header>
 
+<!-- blocks[1]: Scrolly — full-bleed, outside container -->
+<DocRenderer blocks={[blocks[1]]} />
 
-<!-- DO NOT EDIT (except to modify classes). This will become code imported from Google Doc. -->
-<div class="container">
+<!-- blocks[2]: first text section — padded container -->
+<div class="container story-section">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-10 col-lg-8 col-xxl-6">
-      <DocRenderer {blocks} />
+      <DocRenderer blocks={[blocks[2]]} />
     </div>
   </div>
 </div>
 
+<!-- blocks[3]: beeMap — full-bleed -->
+<DocRenderer blocks={[blocks[3]]} />
 
-<!-- Hard-code any custom code that should appear AFTER Google Doc below here. -->
+<!-- blocks[4]: second text section -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-lg-8 col-xxl-6">
+      <DocRenderer blocks={[blocks[4]]} />
+    </div>
+  </div>
+</div>
+
+<!-- blocks[5]: BeeGame — full-bleed via shortcode -->
+<DocRenderer blocks={[blocks[5]]} />
+
+<!-- blocks[6]: third text section (Nagoya onwards) -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-lg-8 col-xxl-6">
+      <DocRenderer blocks={[blocks[6]]} />
+    </div>
+  </div>
+</div>
+
+<!-- blocks[7]: BeeCarousel — full-bleed via shortcode -->
+<DocRenderer blocks={[blocks[7]]} />
+
 <footer class="container-fluid bg-dark text-white p-5">
   <p class="text-center">See template on <a class="text-white" href="https://github.com/jrue/multimedia-template-2026" target="_blank">Github</a></p>
 </footer>
+
+<style>
+  .hero-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .story-section {
+    padding-top: 4rem;
+  }
+</style>

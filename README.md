@@ -46,7 +46,7 @@ The site will be available at `http://localhost:5173`. To stop the server, press
 
 # Setting up a Google Doc
 
-Here is [an example Google Doc](https://docs.google.com/document/d/1JaxRkCqZyeWIPwXXocAwUoFaPsqULiQI_Oiby_F0JZ8/edit?usp=sharing) demonstrating shortcodes.
+Here is [an example Google Doc](https://docs.google.com/document/d/1jQyqVMsfLvkZdAzycDxJ1Zagw7gFbDFyxTcsRZg_5Yw/edit?usp=sharing) demonstrating shortcodes.
 
 1. Create a Google Doc (or use an existing one) and click the share button to change the General access so that "Anyone with the link" is a **Viewer**.
 2. Copy the Link to your clipboard.
