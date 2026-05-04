@@ -46,7 +46,7 @@
   let raf = 0, tickInt: ReturnType<typeof setInterval>, lastTs = 0;
 
   // ── Difficulty tables ─────────────────────────────────────────────────────
-  const FLOWER_COUNTS  = [4,  9, 16, 25];
+  const FLOWER_COUNTS  = [4, 10, 16, 25];
 
   function npcCfg(h: number) {
     if (h === 0) return { wild: 4, honey: 0 };
