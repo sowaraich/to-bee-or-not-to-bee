@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { browser } from '$app/environment';
+  import { base } from '$app/paths';
 
   // ── Sprite constants ──────────────────────────────────────────────────────
   const FRAME_W = 143, FRAME_H = 104, TOTAL_FRAMES = 7;
@@ -300,7 +301,7 @@
               <div class="icon-row">
                 {#each [0,1,2,3] as i (i)}
                   <button class="icon-btn" class:lit={i <= flowerSet} on:click={() => flowerSet = i}>
-                    <img src="/game/Yellow_Flower_1.png" alt="" class="pick-img" />
+                    <img src="{base}/game/Yellow_Flower_1.png" alt="" class="pick-img" />
                   </button>
                 {/each}
               </div>
@@ -312,7 +313,7 @@
               <div class="icon-row">
                 {#each [0,1,2,3] as i (i)}
                   <button class="icon-btn" class:lit={i <= hives} on:click={() => hives = i}>
-                    <img src="/game/Stup.png" alt="" class="pick-img" />
+                    <img src="{base}/game/Stup.png" alt="" class="pick-img" />
                   </button>
                 {/each}
               </div>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   const bees = [
     { file: 'andrenid',   common: 'Mining Bee',           scientific: 'Andrena sp.'    },
     { file: 'anthidium',  common: 'Wool Carder Bee',       scientific: 'Anthidium sp.'  },
@@ -32,7 +33,7 @@
       <div class="track" style="transform: translateX(calc(-{active} * 100%));">
         {#each bees as bee}
           <div class="slide">
-            <img src="/bees/{bee.file}.png" alt={bee.common} />
+            <img src="{base}/bees/{bee.file}.png" alt={bee.common} />
           </div>
         {/each}
       </div>
