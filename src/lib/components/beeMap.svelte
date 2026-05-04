@@ -196,8 +196,7 @@
   </div>
 
   <footer>
-    Data: MacInnis, Normandin & Ziter (2023), PeerJ 11:e14699 ·
-    Normandin et al. (2017), PeerJ 5:e3051<br>
+    Data: MacInnis, Normandin & Ziter (2023)<br>
     Sites sampled across the Island of Montréal, Québec, Canada
   </footer>
 </section>
