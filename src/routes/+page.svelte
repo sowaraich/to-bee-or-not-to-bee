@@ -5,6 +5,7 @@
   const blocks = rawBlocks as Block[];
   import WildBee from '$lib/components/wildbee.svelte';
   import HoneyBee from '$lib/components/honeybee.svelte';
+  import { base } from '$app/paths';
 </script>
 
 <WildBee />
@@ -12,7 +13,7 @@
 
 <header class="hero-header">
   <video autoplay muted loop playsinline class="hero-video">
-    <source src="/scrolly/01.mp4" type="video/mp4" />
+    <source src="{base}/scrolly/01.mp4" type="video/mp4" />
   </video>
   <div class="hero-content">
     <h1 class="text-white text-center display-1">To bee or not to bee</h1>
